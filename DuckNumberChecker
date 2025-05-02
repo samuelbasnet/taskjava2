@@ -1,0 +1,11 @@
+public class DuckNumberChecker {
+    public static boolean isDuckNumber(int n) {
+        String num = String.valueOf(n);
+        return num.indexOf('0') > 0;
+    }
+
+    public static void main(String[] args) {
+        int number = 1203;
+        System.out.println(number + " is Duck number: " + isDuckNumber(number));
+    }
+}
