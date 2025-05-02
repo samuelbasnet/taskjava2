@@ -1,0 +1,11 @@
+public class InterestCalculator {
+    public static double calculateCompoundInterest(double principal, double rate, int time) {
+        double amount = principal * Math.pow(1 + rate / 100, time);
+        return amount - principal;
+    }
+
+    public static void main(String[] args) {
+        double interest = calculateCompoundInterest(10000, 5, 2);
+        System.out.println("Compound Interest: " + interest);
+    }
+}
