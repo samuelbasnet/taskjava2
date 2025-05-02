@@ -1,0 +1,20 @@
+public class KaprekarChecker {
+    public static boolean isKaprekar(int n) {
+        if (n == 1) return true;
+        int square = n * n;
+        String str = String.valueOf(square);
+        for (int i = 1; i < str.length(); i++) {
+            int left = Integer.parseInt(str.substring(0, i));
+            int right = Integer.parseInt(str.substring(i));
+            if (right != 0 && left + right == n) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public static void main(String[] args) {
+        int num = 45;
+        System.out.println(num + " is Kaprekar number: " + isKaprekar(num));
+    }
+}
