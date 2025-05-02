@@ -1,0 +1,27 @@
+public class PalindromePrimeChecker {
+    public static boolean isPalindrome(int n) {
+        int reversed = 0, original = n;
+        while (n > 0) {
+            reversed = reversed * 10 + n % 10;
+            n /= 10;
+        }
+        return original == reversed;
+    }
+
+    public static boolean isPrime(int n) {
+        if (n < 2) return false;
+        for (int i = 2; i <= Math.sqrt(n); i++) {
+            if (n % i == 0) return false;
+        }
+        return true;
+    }
+
+    public static boolean isPalindromePrime(int n) {
+        return isPalindrome(n) && isPrime(n);
+    }
+
+    public static void main(String[] args) {
+        int number = 131;
+        System.out.println(number + " is Palindrome Prime: " + isPalindromePrime(number));
+    }
+}
